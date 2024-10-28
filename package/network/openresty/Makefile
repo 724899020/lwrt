@@ -28,9 +28,10 @@ include $(INCLUDE_DIR)/package.mk
 define Package/openresty
   SECTION:=net                          # 包的类别
   CATEGORY:=Network                     # 包在 OpenWRT 菜单中的分类
-  TITLE:=OpenResty - A Scalable Web Platform by Extending NGINX with Lua  # 包的标题
+  SUBMENU:=Web Servers/Proxies          # 包在NetWork 菜单中的子类
+  TITLE:=OpenResty - A Scalable Web Platform by Extending NGINX with Lua  # 包的标题  
   URL:=https://openresty.org/           # 包的官网地址
-  DEPENDS:=+libpcre +zlib +openssl +luajit  # 定义包的依赖项
+  DEPENDS:=+uwsgi +uwsgi-luci-support +nginx-ssl +nginx-mod-ubus +libpcre +zlib +openssl +luajit  # 定义包的依赖项
 endef
 
 # 包的详细描述
